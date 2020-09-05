@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+    apache:
+        build:
+            context: ./apache
+            dockerfile: ./Dockerfile
+        restart: unless-stopped
+        ports:
+            - 10080:80
+            - 10443:443
+        depends_on:
+            - mysql
+        links:
+            - mysql:mysql
+        volumes:
+            - ./apache/html:/var/www/html:rw
+        tty: true
+        stdin_open: true
+
+    mysql:
+        image: mysql
+        environment:
+            - MYSQL_DATABASE=irohaboard
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_ROOT_PASSWORD=root
+        volumes:
+            - ./apache/sql:/var/lib/mysql:rw
+        tty: true
+        stdin_open: true
