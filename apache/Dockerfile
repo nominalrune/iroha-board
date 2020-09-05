@@ -1,25 +1,25 @@
 FROM ubuntu
-LABEL version="0.1"
-LABEL name="iroha"
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get  update \
+LABEL version="0.1" name="iroha"
+RUN DEBIAN_FRONTEND=noninteractive \
+	apt-get update \
 	&& apt-get -y update \
-	&& apt-get -y install zlib1g-dev apache2 php php-mysql php-mbstring libapache2-mod-php7.4 mysql-client 
-ENV APACHE_DOCUMENT_ROOT /var/www/html
-ENV APACHE_RUN_DIR /var/run/apache2
-ENV PHP_INI_DIR /etc/php/7.4/apache2
+	&& apt-get -y install \
+	zlib1g-dev apache2 \
+	php php-mbstring libapache2-mod-php7.4 \
+	mysql-client php-mysql
+ENV APACHE_DOCUMENT_ROOT=/var/www/html \
+	APACHE_RUN_DIR=/var/run/apache2 \
+	PHP_INI_DIR=/etc/php/7.4/apache2
 COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envvars /etc/apache2/envvars
-#COPY ./html/ /var/www/html/
 COPY ./php.ini /etc/php/7.4/apache2/php.ini
-ENV DEBIAN_FRONTEND=interactive
 RUN . /etc/apache2/envvars
-ENV APACHE_RUN_USER=www-data
-ENV APACHE_RUN_GROUP=www-data
-ENV APACHE_PID_FILE=/var/run/apache2/apache2.pid
-ENV APACHE_RUN_DIR=/var/run/apache2
-ENV APACHE_LOCK_DIR=/var/lock/apache2
-ENV APACHE_LOG_DIR=/var/log/apache2
-ENV LANG=C
+ENV APACHE_RUN_USER=www-data \
+	APACHE_RUN_GROUP=www-data \
+	APACHE_PID_FILE=/var/run/apache2/apache2.pid \
+	APACHE_RUN_DIR=/var/run/apache2 \
+	APACHE_LOCK_DIR=/var/lock/apache2 \
+	APACHE_LOG_DIR=/var/log/apache2 \
+	LANG=C
 RUN chown -R www-data /var/www/
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
