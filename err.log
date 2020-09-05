@@ -1,0 +1,247 @@
+Creating config file /etc/php/7.4/mods-available/opcache.ini with new version
+Setting up libxml2:amd64 (2.9.10+dfsg-5) ...
+Setting up apache2-utils (2.4.41-4ubuntu3.1) ...
+Setting up mysql-client-core-8.0 (8.0.21-0ubuntu0.20.04.4) ...
+Setting up php7.4-json (7.4.3-4ubuntu2.2) ...
+
+Creating config file /etc/php/7.4/mods-available/json.ini with new version
+Setting up php-mysql (2:7.4+75) ...
+Setting up libhx509-5-heimdal:amd64 (7.7.0+dfsg-1ubuntu1) ...
+Setting up php7.4-cli (7.4.3-4ubuntu2.2) ...
+update-alternatives: using /usr/bin/php7.4 to provide /usr/bin/php (php) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/php.1.gz because associated file /usr/share/man/man1/php7.4.1.gz (of link group php) doesn't exist
+update-alternatives: using /usr/bin/phar7.4 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/phar.1.gz because associated file /usr/share/man/man1/phar7.4.1.gz (of link group phar) doesn't exist
+update-alternatives: using /usr/bin/phar.phar7.4 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+update-alternatives: warning: skip creation of /usr/share/man/man1/phar.phar.1.gz because associated file /usr/share/man/man1/phar.phar7.4.1.gz (of link group phar.phar) doesn't exist
+
+Creating config file /etc/php/7.4/cli/php.ini with new version
+Setting up perl (5.30.0-9build1) ...
+Setting up zlib1g-dev:amd64 (1:1.2.11.dfsg-2ubuntu1) ...
+Setting up mysql-client-8.0 (8.0.21-0ubuntu0.20.04.4) ...
+Setting up libkrb5-26-heimdal:amd64 (7.7.0+dfsg-1ubuntu1) ...
+Setting up mysql-client (8.0.21-0ubuntu0.20.04.4) ...
+Setting up libheimntlm0-heimdal:amd64 (7.7.0+dfsg-1ubuntu1) ...
+Setting up libgssapi3-heimdal:amd64 (7.7.0+dfsg-1ubuntu1) ...
+Setting up libldap-2.4-2:amd64 (2.4.49+dfsg-2ubuntu1.3) ...
+Setting up libaprutil1-ldap:amd64 (1.6.1-4ubuntu2) ...
+Setting up libcurl4:amd64 (7.68.0-1ubuntu2.2) ...
+Setting up apache2-bin (2.4.41-4ubuntu3.1) ...
+Setting up libapache2-mod-php7.4 (7.4.3-4ubuntu2.2) ...
+Package apache2 is not configured yet. Will defer actions by package libapache2-mod-php7.4.
+
+Creating config file /etc/php/7.4/apache2/php.ini with new version
+No module matches 
+Setting up apache2 (2.4.41-4ubuntu3.1) ...
+Enabling module mpm_event.
+Enabling module authz_core.
+Enabling module authz_host.
+Enabling module authn_core.
+Enabling module auth_basic.
+Enabling module access_compat.
+Enabling module authn_file.
+Enabling module authz_user.
+Enabling module alias.
+Enabling module dir.
+Enabling module autoindex.
+Enabling module env.
+Enabling module mime.
+Enabling module negotiation.
+Enabling module setenvif.
+Enabling module filter.
+Enabling module deflate.
+Enabling module status.
+Enabling module reqtimeout.
+Enabling conf charset.
+Enabling conf localized-error-pages.
+Enabling conf other-vhosts-access-log.
+Enabling conf security.
+Enabling conf serve-cgi-bin.
+Enabling site 000-default.
+info: Switch to mpm prefork for package libapache2-mod-php7.4
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+info: Executing deferred 'a2enmod php7.4' for package libapache2-mod-php7.4
+Enabling module php7.4.
+invoke-rc.d: could not determine current runlevel
+invoke-rc.d: policy-rc.d denied execution of start.
+Setting up php7.4 (7.4.3-4ubuntu2.2) ...
+Setting up php (2:7.4+75) ...
+Processing triggers for libc-bin (2.31-0ubuntu9) ...
+Processing triggers for ca-certificates (20190110ubuntu1.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Processing triggers for php7.4-cli (7.4.3-4ubuntu2.2) ...
+Processing triggers for libapache2-mod-php7.4 (7.4.3-4ubuntu2.2) ...
+Removing intermediate container 99c75fdb1e4e
+ ---> 6110b995149b
+Step 6/22 : ENV APACHE_DOCUMENT_ROOT /var/www/html
+ ---> Running in 5fa8b611055d
+Removing intermediate container 5fa8b611055d
+ ---> 3a9cfef99095
+Step 7/22 : ENV APACHE_RUN_DIR /var/run/apache2
+ ---> Running in 818709a956ae
+Removing intermediate container 818709a956ae
+ ---> 14d4bfac92ac
+Step 8/22 : ENV PHP_INI_DIR /etc/php/7.4/apache2
+ ---> Running in a8bd28290902
+Removing intermediate container a8bd28290902
+ ---> 5149623d33cd
+Step 9/22 : COPY ./apache2.conf /etc/apache2/apache2.conf
+ ---> b3718d1e0b79
+Step 10/22 : COPY ./envvars /etc/apache2/envvars
+ ---> a4e6480a11f7
+Step 11/22 : COPY ./php.ini /etc/php/7.4/apache2/php.ini
+ ---> c7517f4e96e9
+Step 12/22 : ENV DEBIAN_FRONTEND=interactive
+ ---> Running in e36b4b9e70e3
+Removing intermediate container e36b4b9e70e3
+ ---> 74795f8b5c9f
+Step 13/22 : RUN . /etc/apache2/envvars
+ ---> Running in 5532a3333434
+Removing intermediate container 5532a3333434
+ ---> 9f8f9c1e097c
+Step 14/22 : ENV APACHE_RUN_USER=www-data
+ ---> Running in 2caa66d5c5b9
+Removing intermediate container 2caa66d5c5b9
+ ---> 6e4e802e660f
+Step 15/22 : ENV APACHE_RUN_GROUP=www-data
+ ---> Running in de7dcde0d07c
+Removing intermediate container de7dcde0d07c
+ ---> 2b1430ea6a45
+Step 16/22 : ENV APACHE_PID_FILE=/var/run/apache2/apache2.pid
+ ---> Running in ce545b4fc7e9
+Removing intermediate container ce545b4fc7e9
+ ---> 9da6911670b3
+Step 17/22 : ENV APACHE_RUN_DIR=/var/run/apache2
+ ---> Running in 27a0558d2f7a
+Removing intermediate container 27a0558d2f7a
+ ---> 0463862913bc
+Step 18/22 : ENV APACHE_LOCK_DIR=/var/lock/apache2
+ ---> Running in 6104d0ef47a0
+Removing intermediate container 6104d0ef47a0
+ ---> 5c6f535c193a
+Step 19/22 : ENV APACHE_LOG_DIR=/var/log/apache2
+ ---> Running in 10376be6e11d
+Removing intermediate container 10376be6e11d
+ ---> a99f64c5b51f
+Step 20/22 : ENV LANG=C
+ ---> Running in 6001962ff5e6
+Removing intermediate container 6001962ff5e6
+ ---> cace37c68037
+Step 21/22 : RUN chown -R www-data /var/www/
+ ---> Running in 584d5e239c93
+Removing intermediate container 584d5e239c93
+ ---> 9619e30cbe19
+Step 22/22 : RUN service apache2 start
+ ---> Running in ba16bc7d92ad
+ * Starting Apache httpd web server apache2
+ * 
+Removing intermediate container ba16bc7d92ad
+ ---> 119d7f9c8312
+
+Successfully built 119d7f9c8312
+Successfully tagged iroha_apache:latest
+Creating iroha_mysql_1 ... done
+Creating iroha_apache_1 ... done
+Attaching to iroha_mysql_1, iroha_apache_1
+mysql_1   | 2020-09-05 10:14:21+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.21-1debian10 started.     
+mysql_1   | 2020-09-05 10:14:21+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+mysql_1   | 2020-09-05 10:14:21+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.21-1debian10 started.     
+mysql_1   | 2020-09-05 10:14:21+00:00 [Note] [Entrypoint]: Initializing database files
+mysql_1   | 2020-09-05T10:14:21.616641Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.21) initializing of server in progress as process 43
+mysql_1   | 2020-09-05T10:14:21.624558Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+mysql_1   | 2020-09-05T10:14:21.629944Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+mysql_1   | 2020-09-05T10:14:22.991048Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysql_1   | 2020-09-05T10:14:25.513670Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! 
+Please consider switching off the --initialize-insecure option.
+mysql_1   | 2020-09-05 10:14:28+00:00 [Note] [Entrypoint]: Database files initialized
+mysql_1   | 2020-09-05 10:14:28+00:00 [Note] [Entrypoint]: Starting temporary server
+mysql_1   | mysqld will log errors to /var/lib/mysql/691bd52ae235.err
+mysql_1   | mysqld is running as pid 92
+mysql_1   | 2020-09-05 10:14:30+00:00 [Note] [Entrypoint]: Temporary server started.
+mysql_1   | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+mysql_1   | Warning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+mysql_1   | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+mysql_1   | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+mysql_1   | 2020-09-05 10:14:32+00:00 [Note] [Entrypoint]: Creating database irohaboard
+mysql_1   | 
+mysql_1   | 2020-09-05 10:14:32+00:00 [Note] [Entrypoint]: Stopping temporary server
+mysql_1   | 2020-09-05 10:14:34+00:00 [Note] [Entrypoint]: Temporary server stopped
+mysql_1   |
+mysql_1   | 2020-09-05 10:14:34+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+mysql_1   |
+mysql_1   | 2020-09-05T10:14:35.124490Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.21) starting as process 1
+mysql_1   | 2020-09-05T10:14:35.133217Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+mysql_1   | 2020-09-05T10:14:35.147065Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+mysql_1   | 2020-09-05T10:14:35.771184Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysql_1   | 2020-09-05T10:14:35.924950Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+mysql_1   | 2020-09-05T10:14:36.118464Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+ted connections are now supported for this channel.
+mysql_1   | 2020-09-05T10:14:36.130641Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+mysql_1   | 2020-09-05T10:14:36.175973Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+Gracefully stopping... (press Ctrl+C again to force)
+Stopping iroha_apache_1 ... done
+Stopping iroha_mysql_1  ... done
+  
+
+
+
+
+PS C:\Working\docker\iroha> docker-compose up --build
+Building apache
+~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Successfully built 883fa24c1cfb
+Successfully tagged iroha_apache:latest
+Starting iroha_mysql_1 ... done
+Recreating iroha_apache_1 ... done
+Attaching to iroha_mysql_1, iroha_apache_1
+mysql_1   | 2020-09-05 10:35:05+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.21-1debian10 started.     
+mysql_1   | 2020-09-05 10:35:05+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+mysql_1   | 2020-09-05 10:35:05+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.21-1debian10 started.
+apache_1  | <span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'curl' (tried: /usr/lib/php/20190902/curl (/usr/lib/php/20190902/curl: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/curl.so (/usr/lib/php/20190902/curl.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />      
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'gd2' (tried: /usr/lib/php/20190902/gd2 (/usr/lib/php/20190902/gd2: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/gd2.so (/usr/lib/php/20190902/gd2.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'intl' (tried: /usr/lib/php/20190902/intl (/usr/lib/php/20190902/intl: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/intl.so (/usr/lib/php/20190902/intl.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />      
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'imap' (tried: /usr/lib/php/20190902/imap (/usr/lib/php/20190902/imap: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/imap.so (/usr/lib/php/20190902/imap.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />      
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'mysqli' (tried: /usr/lib/php/20190902/mysqli (/usr/lib/php/20190902/mysqli: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/mysqli.so (/usr/lib/php/20190902/mysqli.so: undefined symbol: mysqlnd_global_stats)) in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'odbc' (tried: /usr/lib/php/20190902/odbc (/usr/lib/php/20190902/odbc: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/odbc.so (/usr/lib/php/20190902/odbc.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />      
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'openssl' (tried: /usr/lib/php/20190902/openssl (/usr/lib/php/20190902/openssl: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/openssl.so (/usr/lib/php/20190902/openssl.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'pdo_mysql' (tried: /usr/lib/php/20190902/pdo_mysql (/usr/lib/php/20190902/pdo_mysql: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/pdo_mysql.so (/usr/lib/php/20190902/pdo_mysql.so: undefined symbol: mysqlnd_allocator)) in <b>Unknown</b> on line <b>0</b><br />   
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'pdo_oci' (tried: /usr/lib/php/20190902/pdo_oci (/usr/lib/php/20190902/pdo_oci: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/pdo_oci.so (/usr/lib/php/20190902/pdo_oci.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  PHP Startup: Unable to load dynamic library 'pdo_odbc' (tried: /usr/lib/php/20190902/pdo_odbc (/usr/lib/php/20190902/pdo_odbc: cannot open shared object file: No such file or directory), /usr/lib/php/20190902/pdo_odbc.so (/usr/lib/php/20190902/pdo_odbc.so: cannot open shared object file: No such file or directory)) in <b>Unknown</b> on line 
+<b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  Module 'PDO' already loaded in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  Module 'exif' already loaded in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  Module 'fileinfo' already loaded in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  Module 'gettext' already loaded in <b>Unknown</b> on line <b>0</b><br />
+apache_1  | </span><span style='color: #ff0000'><br />
+apache_1  | <b>Warning</b>:  Module 'mbstring' already loaded in <b>Unknown</b> on line <b>0</b><br />
+mysql_1   | 2020-09-05T10:35:05.790536Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.21) starting as process 1
+mysql_1   | 2020-09-05T10:35:05.797702Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /var/lib/mysql/ is case insensitive
+mysql_1   | 2020-09-05T10:35:05.810308Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+mysql_1   | 2020-09-05T10:35:06.449258Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+mysql_1   | 2020-09-05T10:35:06.587236Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+mysql_1   | 2020-09-05T10:35:06.724279Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+mysql_1   | 2020-09-05T10:35:06.724724Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+mysql_1   | 2020-09-05T10:35:06.736562Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+mysql_1   | 2020-09-05T10:35:06.773992Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+Gracefully stopping... (press Ctrl+C again to force)
+Stopping iroha_apache_1   ... done
+Stopping iroha_mysql_1    ... done
