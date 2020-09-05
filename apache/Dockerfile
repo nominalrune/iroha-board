@@ -1,6 +1,6 @@
 FROM ubuntu
 LABEL version="0.1" name="iroha"
-#ここのnointeracttiveも外したい。...というか、update二回走っている。
+#ここのnointeracttiveも外したい。（パイプで質問に答える 6. Asia  ）..というか、update二回走っている。
 RUN DEBIAN_FRONTEND=noninteractive \
 	apt-get update \
 	&& apt-get -y update \

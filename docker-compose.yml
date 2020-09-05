@@ -24,6 +24,7 @@ services:
             - MYSQL_DATABASE=irohaboard
             - MYSQL_ALLOW_EMPTY_PASSWORD=yes
             - MYSQL_ROOT_PASSWORD=root
+            - TZ=Asia/Tokyo
         volumes:
             - ./apache/sql:/var/lib/mysql:rw
         tty: true
