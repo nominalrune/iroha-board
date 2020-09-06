@@ -6,13 +6,13 @@ services:
             context: ./apache
             dockerfile: ./Dockerfile
         restart: unless-stopped
+        networks: 
+            - iroha_net
         ports:
             - 10080:80
             - 10443:443
         depends_on:
             - mysql
-        links:
-            - mysql:mysql
         volumes:
             - ./apache/html:/var/www/html:rw
         tty: true
@@ -20,6 +20,9 @@ services:
 
     mysql:
         image: mysql
+        restart: unless-stopped
+        networks: 
+            - iroha_net
         environment:
             - MYSQL_DATABASE=irohaboard
             - MYSQL_ALLOW_EMPTY_PASSWORD=yes
@@ -29,3 +32,6 @@ services:
             - ./apache/sql:/var/lib/mysql:rw
         tty: true
         stdin_open: true
+networks: 
+    iroha_net:
+        driver: bridge
