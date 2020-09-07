@@ -39,13 +39,13 @@ jobs:
         uses: docker/build-push-action@v1.1.0
         with:
           # Username used to log in to a Docker registry. If not set then no login will occur
-          username: github.event.inputs.username
+          username: ${{github.event.inputs.username}}
           # Password or personal access token used to log in to a Docker registry. If not set then no login will occur
-          password: github.event.inputs.password
+          password: ${{github.event.inputs.password}}
           # Server address of Docker registry. If not set then will default to Docker Hub
           #registry:  optional
           # Docker repository to tag the image with
-          repository: github.event.inputs.repository
+          repository: ${{github.event.inputs.repository}}
           # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
           # tags: optional
           # Automatically tags the built image with the git reference as per the readme
@@ -53,7 +53,7 @@ jobs:
           # Automatically tags the built image with the git short SHA as per the readme
           # tag_with_sha: optional
           # Path to the build context
-          path: github.event.inputs.path # optional, default is .
+          path: ${{github.event.inputs.path}} # optional, default is .
           # Path to the Dockerfile (Default is '{path}/Dockerfile')
           # dockerfile: optional
           # Sets the target stage to build
