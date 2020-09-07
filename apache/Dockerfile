@@ -2,15 +2,15 @@ FROM ubuntu
 LABEL version="0.1" name="iroha"
 RUN export DEBIAN_FRONTEND="noninteractive" \
 	&& apt-get update \
-	&& apt-get -y install \
+	&& apt-get install -y --no-install-recommends\
 	apt-utils \
 	apache2 \
 	php php-mbstring libapache2-mod-php7.4 php-mysql \
 	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& export DEBIAN_FRONTEND="interactive" \
+	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
-	&& apt-get remove -y apt-utils
+	&& rm -rf /var/lib/apt/lists/* \
+	&& export DEBIAN_FRONTEND="interactive"
 #ここのnointeracttiveも外したい。（パイプで質問に答える 6. Asia  ）
 ENV APACHE_DOCUMENT_ROOT=/var/www/html \
 	APACHE_RUN_DIR=/var/run/apache2 

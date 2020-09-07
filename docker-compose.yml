@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-    apache:
+    php:
         build:
             context: ./apache
             dockerfile: ./Dockerfile
