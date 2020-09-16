@@ -1,0 +1,33 @@
+2020-09-16 15:06:25 Notice: Notice (8): compact(): Undefined variable: record in [/var/www/html/app/Controller/ContentsQuestionsController.php, line 236]
+Trace:
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 230
+compact - [internal], line ??
+ContentsQuestionsController::index() - APP/Controller/ContentsQuestionsController.php, line 236
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 499
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 136
+
+2020-09-16 15:06:35 Notice: Notice (8): compact(): Undefined variable: record in [/var/www/html/app/Controller/ContentsQuestionsController.php, line 236]
+Trace:
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 230
+compact - [internal], line ??
+ContentsQuestionsController::index() - APP/Controller/ContentsQuestionsController.php, line 236
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 499
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 136
+
+2020-09-16 15:06:43 Notice: Notice (8): compact(): Undefined variable: record in [/var/www/html/app/Controller/ContentsQuestionsController.php, line 236]
+Trace:
+ErrorHandler::handleError() - CORE/Cake/Error/ErrorHandler.php, line 230
+compact - [internal], line ??
+ContentsQuestionsController::index() - APP/Controller/ContentsQuestionsController.php, line 236
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 499
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 193
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 167
+[main] - APP/webroot/index.php, line 136
+
