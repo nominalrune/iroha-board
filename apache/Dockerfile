@@ -14,7 +14,7 @@ COPY ./envvars /etc/apache2/envvars
 COPY ./php.ini /etc/php/7.4/apache2/php.ini
 RUN apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
-	&& apt-get clean \
+	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& export DEBIAN_FRONTEND="interactive" \
 	&& . /etc/apache2/envvars \
