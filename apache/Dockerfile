@@ -1,5 +1,5 @@
 FROM ubuntu
-LABEL version="0.1" name="iroha_board" author="YOKOYAMA Yoshinori"
+LABEL version="0.1" name="iroha_board" author="nominalrune"
 RUN export DEBIAN_FRONTEND="noninteractive" \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends \
@@ -9,7 +9,8 @@ RUN export DEBIAN_FRONTEND="noninteractive" \
 	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get clean \
-	&& rm -rf /var/lib/apt/lists/*
+	&& rm -rf /var/lib/apt/lists/* \
+	export DEBIAN_FRONTEND="interactive"
 ENV APACHE_DOCUMENT_ROOT=/var/www/html \
 	APACHE_RUN_DIR=/var/run/apache2 \
 	PHP_INI_DIR=/etc/php/7.4/apache2
