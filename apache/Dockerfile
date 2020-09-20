@@ -16,8 +16,8 @@ RUN apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/* \
-	export DEBIAN_FRONTEND="interactive" \
-	. /etc/apache2/envvars \
+	&& export DEBIAN_FRONTEND="interactive" \
+	&& . /etc/apache2/envvars \
 	&& chown -R www-data /var/www/html \
 	&& service apache2 restart
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
