@@ -20,7 +20,7 @@
 2. `docker-compose`によるサービス構築と起動
 	3. ターゲットディレクトリにてターミナルを開き、`docker-compose up --build`をコマンド
 	4. コンテナからイメージへのビルド作業が終了し、サービスが起動するまで待つ
-		1. mysqlイメージが`hogehoge`というメッセージを出して待機している状態になれば完了したと考えてよい。
+		1. mysqlイメージが`[System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.21'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.`というメッセージを出して待機している状態になれば完了したと考えてよい。
 3. 動作確認・初期登録
 	5. サービスが動作しているか確認する。
 		1. ウェブブラウザを開き、URL`127.0.0.1:10800/install`をアドレスとして貼り付ける。
