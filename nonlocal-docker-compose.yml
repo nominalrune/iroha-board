@@ -1,34 +1,34 @@
 version: "3"
 
 services:
-    php:
-        build:
-            context: ./apache
-            dockerfile: ./Dockerfile
-        restart: unless-stopped
-        networks: 
-            - iroha_net
-        ports:
-            - 10080:80
-        depends_on:
-            - mysql
-        tty: true
-        stdin_open: true
+  php:
+    build:
+      context: ./apache
+      dockerfile: ./nonlocal.Dockerfile
+    restart: unless-stopped
+    networks:
+      - iroha_net
+    ports:
+      - 10080:80
+    depends_on:
+      - mysql
+    tty: true
+    stdin_open: true
 
-    mysql:
-        image: mysql
-        restart: unless-stopped
-        networks: 
-            - iroha_net
-        environment:
-            - MYSQL_DATABASE=irohaboard
-            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-            - MYSQL_ROOT_PASSWORD=root
-            - TZ=Asia/Tokyo
-        volumes:
-            - sql:/var/lib/mysql
-        tty: true
-        stdin_open: true
-networks: 
-    iroha_net:
-        driver: bridge
+  mysql:
+    image: mysql
+    restart: unless-stopped
+    networks:
+      - iroha_net
+    environment:
+      - MYSQL_DATABASE=irohaboard
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=root
+      - TZ=Asia/Tokyo
+    volumes:
+      - sql:/var/lib/mysql
+    tty: true
+    stdin_open: true
+networks:
+  iroha_net:
+    driver: bridge
