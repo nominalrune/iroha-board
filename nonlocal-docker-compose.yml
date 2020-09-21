@@ -32,3 +32,4 @@ services:
 networks:
   iroha_net:
     driver: bridge
+volumes: sql

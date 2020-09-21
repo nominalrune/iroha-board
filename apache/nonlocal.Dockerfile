@@ -2,8 +2,7 @@ FROM ubuntu
 LABEL version="0.1" name="iroha_board" author="nominalrune"
 RUN export DEBIAN_FRONTEND="noninteractive" \
 	&& apt-get update \
-	&& apt-get install -y --no-install-recommends \
-	apt-utils \
+	&& apt-get install -y --no-install-recommends apt-utils \
 	apache2 \
 	php php-mbstring php-pdo php-mysql
 ENV APACHE_DOCUMENT_ROOT=/var/www/html \
