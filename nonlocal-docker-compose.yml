@@ -33,4 +33,4 @@ networks:
   iroha_net:
     driver: bridge
 volumes:
-  - sql
+  - sql:/var/lib/mysql
