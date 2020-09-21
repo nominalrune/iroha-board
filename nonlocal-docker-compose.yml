@@ -25,12 +25,8 @@ services:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
       - MYSQL_ROOT_PASSWORD=root
       - TZ=Asia/Tokyo
-    volumes:
-      - sql:/var/lib/mysql
     tty: true
     stdin_open: true
 networks:
   iroha_net:
     driver: bridge
-volumes:
-  - sql:/var/lib/mysql
