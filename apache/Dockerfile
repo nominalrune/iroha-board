@@ -5,12 +5,12 @@ RUN export DEBIAN_FRONTEND="noninteractive" \
 	&& apt-get install -y --no-install-recommends \
 	apt-utils \
 	apache2 mysql-client \
-	php=7.4.3 php-mbstring php-pdo php-mysql \
+	php php-mbstring php-pdo php-mysql \
 	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/* \
-	&& export DEBIAN_FRONTEND="interactive" \
+	&& export DEBIAN_FRONTEND="interactive"
 ENV APACHE_DOCUMENT_ROOT=/var/www/html \
 	APACHE_RUN_DIR=/var/run/apache2 \
 	PHP_INI_DIR=/etc/php/7.4/apache2
