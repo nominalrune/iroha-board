@@ -5,7 +5,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" \
 	&& apt-get install -y --no-install-recommends \
 	apt-utils \
 	apache2 \
-	php=7.4 php-mbstring php-pdo php-mysql \
+	php php-mbstring php-pdo php-mysql \
 	apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
