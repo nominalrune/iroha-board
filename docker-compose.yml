@@ -19,7 +19,7 @@ services:
         stdin_open: true
 
     mysql:
-        image: mysql
+        image: mysql:8.0.21
         restart: unless-stopped
         networks: 
             - iroha_net
