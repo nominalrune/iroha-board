@@ -3,7 +3,8 @@ LABEL version="0.1" name="iroha_board" author="nominalrune"
 RUN apt-get update \
 	&& apt-get install -y apt-utils \
 	&& env DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends apache2 \
-	php php-mbstring php-pdo php-mysql \
+	mysql-common mysql-client-core-8.0 \
+	php-common php7.4 php7.4-mbstring php7.4-pdo php7.4-mysql \
 	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
