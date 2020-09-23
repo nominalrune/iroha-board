@@ -1,16 +1,13 @@
 FROM ubuntu
 LABEL version="0.1" name="iroha_board" author="nominalrune"
-RUN export DEBIAN_FRONTEND="noninteractive" \
-	&& apt-get update \
-	&& apt-get install -y --no-install-recommends \
-	apt-utils \
-	apache2 \
+RUN apt-get update \
+	&& apt-get install -y apt-utils \
+	&& env DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends apache2 \
 	php php-mbstring php-pdo php-mysql \
 	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
-	&& rm -rf /var/lib/apt/lists/* \
-	&& export DEBIAN_FRONTEND="interactive"
+	&& rm -rf /var/lib/apt/lists/*
 ENV APACHE_DOCUMENT_ROOT=/var/www/html \
 	APACHE_RUN_DIR=/var/run/apache2 \
 	PHP_INI_DIR=/etc/php/7.4/apache2
