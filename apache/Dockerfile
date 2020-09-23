@@ -4,7 +4,7 @@ RUN apt-get update \
 	&& apt-get install -y apt-utils \
 	&& env DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends apache2 \
 	mysql-common mysql-client-core-8.0 \
-	php php7.4-mbstring php7.4-pdo php7.4-mysql \
+	php php7.4-mbstring php7.4-pdo php7.4-mysqlnd \
 	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
