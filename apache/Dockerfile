@@ -6,7 +6,7 @@ RUN export DEBIAN_FRONTEND="noninteractive" \
 	apt-utils \
 	apache2 \
 	php php-mbstring php-pdo php-mysql \
-	apt-get remove -y --purge apt-utils \
+	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
 	&& apt-get -y clean \
 	&& rm -rf /var/lib/apt/lists/* \
