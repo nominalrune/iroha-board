@@ -10,7 +10,6 @@ services:
             - iroha_net
         ports:
             - 10080:80
-            - 10443:443
         depends_on:
             - mysql
         volumes:
