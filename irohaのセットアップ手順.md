@@ -60,9 +60,14 @@ last updated: 2020.09.24
 		cd /projects/iroha
 		git checkout -b lbProjectTest
 		```
-1. **設定**（オプショナル）
+1. **設定**
+	1. apacheへの所有権委譲
+		- apacheが外部公開ディレクトリを操作できるよう、所有権をわたす
+			```terminal
+			chown -R www-data /projects/iroha/apache
+			```
 	1. MySQLのパスワード設定
-		1. rootパスワード（デフォルトでは`root`）
+	- ルートパスワードを設定する（デフォルトでは`root`）
 			1. MySQL側の設定
 				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
 				```terminal
