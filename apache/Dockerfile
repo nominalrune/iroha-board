@@ -1,6 +1,6 @@
 FROM ubuntu
 LABEL version="0.1" name="iroha_board" author="nominalrune"
-RUN evv TZ="Asia/Tokyo" \
+RUN env TZ="Asia/Tokyo" \
 	&& apt-get update \
 	&& apt-get install -y apt-utils \
 	&& echo Asia/Tokyo > /etc/timezone \
