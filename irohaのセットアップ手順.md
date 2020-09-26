@@ -64,9 +64,9 @@ last updated: 2020.09.24
 			1. MySQL側の設定
 				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
 				```terminal
-				vi docker-compose.yml #編集コマンド
+				vi docker-compose.yml #編集コマンドを打つ
 				~~略~~
-				     mysql:
+				     mysql: #MySQLの項目を見つける
 					image: mysql:8.0.21
 					restart: unless-stopped
 					networks:
@@ -74,17 +74,21 @@ last updated: 2020.09.24
 					environment:
 					    - MYSQL_DATABASE=irohaboard
 					    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-					    - MYSQL_ROOT_PASSWORD=root # <--これ！！
+					    - MYSQL_ROOT_PASSWORD=root #これ！！
 					    - TZ=Asia/Tokyo
 					volumes:
 					    - ./apache/sql:/var/lib/mysql:rw
 					tty: true
 					stdin_open: true
 				~~略~~
-				:wq  #保存してquitコマンド
+				:wq  #保存してquitコマンドで完了
 				```
 			1. iroha board側の設定
-				1. ディレクトリ`iroha-board-Dockerized/apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
+				1. ディレクトリ`./apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
+					例ei:
+					```terminal
+					vi 
+					```
 #### イメージのビルドと起動
 1. ターミナル起動
 	1. ターミナルで、iroha boardプロジェクトのディレクトリを開く
