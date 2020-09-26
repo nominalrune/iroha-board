@@ -23,7 +23,7 @@ last updated: 2020.09.24
 	- Docker for Windows上でiroha boardサービスをセットアップする方法
 - この文書で説明しないこと
 	- iroha board自体のサービス特徴
-	- 個別の設定事項についての詳細
+	- 個別の設定事項についての仕様詳細
 ---
 ## 環境
 - Windows10 Home バージョン 2004 [build 19041] 以降
