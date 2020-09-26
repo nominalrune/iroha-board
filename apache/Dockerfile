@@ -1,6 +1,7 @@
 FROM ubuntu
 LABEL version="0.1" name="iroha_board" author="nominalrune"
-RUN apt-get update \
+RUN evv TZ="Asia/Tokyo" \
+	&& apt-get update \
 	&& apt-get install -y apt-utils \
 	&& echo Asia/Tokyo > /etc/timezone \
 	&& env DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends apache2 file \
