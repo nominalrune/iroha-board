@@ -68,50 +68,50 @@ last updated: 2020.09.24
 			```
 	1. MySQLのパスワード設定
 	- ルートパスワードを設定する（デフォルトでは`root`）
-			1. MySQL側の設定
-				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
-				```terminal
-				# 例
-				vi docker-compose.yml #編集コマンドを打つ
-				~~中略~~
-				     mysql: #MySQLの項目を見つける
-					image: mysql:8.0.21
-					restart: unless-stopped
-					networks:
-					    - iroha_net
-					environment:
-					    - MYSQL_DATABASE=irohaboard
-					    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-					    - MYSQL_ROOT_PASSWORD=root #パスワードの変更はここ
-					    - TZ=Asia/Tokyo
-					volumes:
-					    - ./apache/sql:/var/lib/mysql:rw
-					tty: true
-					stdin_open: true
-				~~中略~~
-				:wq  #保存してquitコマンドで完了
-				```
-			1. iroha board側の設定
-				1. プロジェクトディレクトリ以下`./apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
-					- 例:
-					```terminal
-					vi ./apache/html/app/Config/database.php
-					~~中略~~
-					class DATABASE_CONFIG {
-					        public $default = array(
-					                'datasource' => 'Database/Mysql',
-					                'persistent' => true,
-					                'host' => 'mysql',
-					                'login' => 'root',
-					                'password' => 'root', #パスワードの変更はここ
-					                'database' => 'irohaboard',
-					                'prefix' => 'ib_',
-					                'encoding' => 'utf8'
-					        );
-					}
-					~~中略~~
-					:wq
-					```
+		1. MySQL側の設定
+			1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
+			```terminal
+			# 例
+			vi docker-compose.yml #編集コマンドを打つ
+			~~中略~~
+			     mysql: #MySQLの項目を見つける
+				image: mysql:8.0.21
+				restart: unless-stopped
+				networks:
+				    - iroha_net
+				environment:
+				    - MYSQL_DATABASE=irohaboard
+				    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+				    - MYSQL_ROOT_PASSWORD=root #パスワードの変更はここ
+				    - TZ=Asia/Tokyo
+				volumes:
+				    - ./apache/sql:/var/lib/mysql:rw
+				tty: true
+				stdin_open: true
+			~~中略~~
+			:wq  #保存してquitコマンドで完了
+			```
+		1. iroha board側の設定
+			1. プロジェクトディレクトリ以下`./apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
+			```terminal
+			# 例
+			vi ./apache/html/app/Config/database.php
+			~~中略~~
+			class DATABASE_CONFIG {
+			        public $default = array(
+			                'datasource' => 'Database/Mysql',
+			                'persistent' => true,
+			                'host' => 'mysql',
+			                'login' => 'root',
+			                'password' => 'root', #パスワードの変更はここ
+			                'database' => 'irohaboard',
+			                'prefix' => 'ib_',
+			                'encoding' => 'utf8'
+			        );
+			}
+			~~中略~~
+			:wq
+			```
 #### イメージのビルドと起動
 1. コンテナからイメージを作成
 	- irohaプロジェクトのルートディレクトリにいることを確認する。（例では`/iroha`）
