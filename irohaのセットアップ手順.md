@@ -84,7 +84,7 @@ last updated: 2020.09.24
 				:wq  #保存してquitコマンドで完了
 				```
 			1. iroha board側の設定
-				1. ディレクトリ`./apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
+				1. プロジェクトディレクトリ以下`./apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
 					- 例:
 					```terminal
 					vi ./apache/html/app/Config/database.php
@@ -104,11 +104,9 @@ last updated: 2020.09.24
 					~~略~~
 					```
 #### イメージのビルドと起動
-1. ターミナル起動
-	1. ターミナルで、iroha boardプロジェクトのディレクトリを開く
-(`docker-compose.yml`のあるディレクトリ)
-
 1. コンテナからイメージを作成
+	- プロジェクトのルートディレクトリにいることを確認する。（例では`/iroha`）
+	次のコマンドを打つ。
 	```terminal
 	docker-compose up --build
 	```
