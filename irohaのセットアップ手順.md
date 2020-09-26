@@ -58,11 +58,30 @@ last updated: 2020.09.24
 		cd iroha
 		git checkout -b lbProjectTest
 		```
-1. **設定**
+1. **設定**（オプショナル）
 	1. MySQLのパスワード設定
 		1. rootパスワード（デフォルトでは`root`）
 			1. MySQL側の設定
 				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
+				```terminal
+				vi docker-compose.yml
+				~~略~~
+				     mysql:
+					image: mysql:8.0.21
+					restart: unless-stopped
+					networks:
+					    - iroha_net
+					environment:
+					    - MYSQL_DATABASE=irohaboard
+					    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+					    - MYSQL_ROOT_PASSWORD=root # <--これ！！
+					    - TZ=Asia/Tokyo
+					volumes:
+					    - ./apache/sql:/var/lib/mysql:rw
+					tty: true
+					stdin_open: true
+				~~略~~
+				```
 			1. iroha board側の設定
 				1. ディレクトリ`iroha-board-Dockerized/apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
 #### イメージのビルドと起動
