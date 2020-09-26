@@ -56,7 +56,7 @@ last updated: 2020.09.24
 	<small>（2020.09.23 現在は https://github.com/nominalrune/iroha-board-Dockerized.git に公開している。社内向けに、安定的な場所に移動予定）</small>
 	- 例：GitHubからリポジトリをクローンして、ブランチを作成
 		```terminal
-		git clone https://github.com/nominalrune/iroha-board-Dockerized.git　/projects/iroha
+		git clone https://github.com/nominalrune/iroha-board-Dockerized.git /projects/iroha
 		cd /projects/iroha
 		git checkout -b lbProjectTest
 		```
