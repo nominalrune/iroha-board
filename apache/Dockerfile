@@ -1,6 +1,6 @@
 FROM ubuntu
 LABEL version="0.1" name="iroha_board" author="nominalrune"
-RUN pt-get update \
+RUN apt-get update \
 	&& apt-get install -y apt-utils \
 	&& env DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends apache2 file \
 	mysql-common mysql-client-core-8.0 \
