@@ -47,8 +47,8 @@ last updated: 2020.09.24
 1. **プロジェクトフォルダ作成**
 	iroha boardプロジェクト用のフォルダを作成する
 	```terminal
-		mkdir iroha
-		```
+	mkdir iroha
+	```
 1. **iroha boardのダウンロード**
 	プロジェクトフォルダに、横山によるソースセットを丸ごとコピーする
 	<small>（2020.09.23 現在は https://github.com/nominalrune/iroha-board-Dockerized.git に公開している。社内向けに、安定的な場所に移動予定）</small>
