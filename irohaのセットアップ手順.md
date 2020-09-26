@@ -3,13 +3,26 @@ last updated: 2020.09.24
 
 ---
 目次
-[TOC]
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=true} -->
+
+<!-- code_chunk_output -->
+
+1. [環境](#環境)
+2. [セットアップ手順](#セットアップ手順)
+    1. [A. 2020.09.23 現在のバージョンでインストールする](#a-20200923-現在のバージョンでインストールする)
+        1. [環境構築](#環境構築)
+        2. [イメージのビルドと起動](#イメージのビルドと起動)
+        3. [動作確認](#動作確認)
+    2. [B. 最新バージョンをインストールする[TBD]](#b-最新バージョンをインストールするtbd)
+
+<!-- /code_chunk_output -->
+
+
 ---
 - この文書で説明すること
 	- Docker for Windows上でiroha boardサービスをセットアップする方法
-
 - この文書で説明しないこと
-	- iroha board自体の説明
+	- iroha board自体のサービス特徴
 	- 個別の設定事項についての詳細
 ---
 ## 環境
@@ -31,25 +44,57 @@ last updated: 2020.09.24
 |    MySQL    | 8.0.21  |
 
 #### 環境構築
-1. プロジェクトフォルダ作成
-	1. iroha boardプロジェクト用のフォルダを作成する
-1. iroha boardのダウンロード
-	1. プロジェクトフォルダに、横山によるソースセットを丸ごとコピーする
+1. **プロジェクトフォルダ作成**
+	- iroha boardプロジェクト用のフォルダを作成する
+	```terminal
+	mkdir iroha
+	```
+1. **iroha boardのダウンロード**
+	- プロジェクトフォルダに、横山によるソースセットを丸ごとコピーする
 	<small>（2020.09.23 現在は https://github.com/nominalrune/iroha-board-Dockerized.git に公開している。社内向けに、安定的な場所に移動予定）</small>
-		- 例：GitHubからリポジトリをクローン・ブランチ作成
-			```terminal
-			git clone https://github.com/nominalrune/iroha-board-Dockerized.git　.
-			git checkout -b lbProjectTest
-			```
-1. 設定
+	- 例：GitHubからリポジトリをクローンして、ブランチを作成
+		```terminal
+		git clone https://github.com/nominalrune/iroha-board-Dockerized.git　./iroha
+		cd iroha
+		git checkout -b lbProjectTest
+		```
+1. **設定**（オプショナル）
 	1. MySQLのパスワード設定
 		1. rootパスワード（デフォルトでは`root`）
 			1. MySQL側の設定
 				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
-			１. iroha board側の設定
-				1. ディレクトリ`iroha-board-Dockerized/apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
+				```terminal
+				vi docker-compose.yml #編集コマンドを打つ
+				~~略~~
+				     mysql: #MySQLの項目を見つける
+					image: mysql:8.0.21
+					restart: unless-stopped
+					networks:
+					    - iroha_net
+					environment:
+					    - MYSQL_DATABASE=irohaboard
+					    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+					    - MYSQL_ROOT_PASSWORD=root #これ！！
+					    - TZ=Asia/Tokyo
+					volumes:
+					    - ./apache/sql:/var/lib/mysql:rw
+					tty: true
+					stdin_open: true
+				~~略~~
+				:wq  #保存してquitコマンドで完了
+				```
+			1. iroha board側の設定
+				1. ディレクトリ`./apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
+					- 例:
+					```terminal
+					vi ./apache/html/app/Config/database.php
+					~~略~~
+					
+					~~略~~
+					```
 #### イメージのビルドと起動
-1. ターミナルで、iroha boardプロジェクトのディレクトリを開く
+1. ターミナル起動
+	1. ターミナルで、iroha boardプロジェクトのディレクトリを開く
 (`docker-compose.yml`のあるディレクトリ)
 
 1. コンテナからイメージを作成
@@ -75,7 +120,7 @@ last updated: 2020.09.24
 		1. ログイン
 1. 課題の作成・割り当てテスト
 	1. 作成
-		1. N種類の課題
+		1. 題
 			1. アップロード上限
 	1. 割り当て
 		1. ユーザー単位
