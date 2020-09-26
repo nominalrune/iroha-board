@@ -46,12 +46,16 @@ last updated: 2020.09.24
 #### 環境構築
 1. **プロジェクトフォルダ作成**
 	iroha boardプロジェクト用のフォルダを作成する
+	```terminal
+		mkdir iroha
+		```
 1. **iroha boardのダウンロード**
 	プロジェクトフォルダに、横山によるソースセットを丸ごとコピーする
 	<small>（2020.09.23 現在は https://github.com/nominalrune/iroha-board-Dockerized.git に公開している。社内向けに、安定的な場所に移動予定）</small>
 	- 例：GitHubからリポジトリをクローンして、ブランチを作成
 		```terminal
-		git clone https://github.com/nominalrune/iroha-board-Dockerized.git　.
+		git clone https://github.com/nominalrune/iroha-board-Dockerized.git　./iroha
+		cd iroha
 		git checkout -b lbProjectTest
 		```
 1. **設定**
