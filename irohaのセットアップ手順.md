@@ -46,16 +46,17 @@ last updated: 2020.09.24
 #### 環境構築
 1. **プロジェクトフォルダ作成**
 	- iroha boardプロジェクト用のフォルダを作成する
-	```terminal
-	mkdir iroha
-	```
+		- 例：
+		```terminal
+		mkdir /projects/iroha
+		```
 1. **iroha boardのダウンロード**
 	- プロジェクトフォルダに、横山によるソースセットを丸ごとコピーする
 	<small>（2020.09.23 現在は https://github.com/nominalrune/iroha-board-Dockerized.git に公開している。社内向けに、安定的な場所に移動予定）</small>
 	- 例：GitHubからリポジトリをクローンして、ブランチを作成
 		```terminal
-		git clone https://github.com/nominalrune/iroha-board-Dockerized.git　./iroha
-		cd iroha
+		git clone https://github.com/nominalrune/iroha-board-Dockerized.git　/projects/iroha
+		cd /projects/iroha
 		git checkout -b lbProjectTest
 		```
 1. **設定**（オプショナル）
@@ -64,8 +65,9 @@ last updated: 2020.09.24
 			1. MySQL側の設定
 				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
 				```terminal
+				# 例
 				vi docker-compose.yml #編集コマンドを打つ
-				~~略~~
+				~~中略~~
 				     mysql: #MySQLの項目を見つける
 					image: mysql:8.0.21
 					restart: unless-stopped
@@ -80,7 +82,7 @@ last updated: 2020.09.24
 					    - ./apache/sql:/var/lib/mysql:rw
 					tty: true
 					stdin_open: true
-				~~略~~
+				~~中略~~
 				:wq  #保存してquitコマンドで完了
 				```
 			1. iroha board側の設定
@@ -88,7 +90,7 @@ last updated: 2020.09.24
 					- 例:
 					```terminal
 					vi ./apache/html/app/Config/database.php
-					~~略~~
+					~~中略~~
 					class DATABASE_CONFIG {
 					        public $default = array(
 					                'datasource' => 'Database/Mysql',
@@ -101,11 +103,12 @@ last updated: 2020.09.24
 					                'encoding' => 'utf8'
 					        );
 					}
-					~~略~~
+					~~中略~~
+					:wq
 					```
 #### イメージのビルドと起動
 1. コンテナからイメージを作成
-	- プロジェクトのルートディレクトリにいることを確認する。（例では`/iroha`）
+	- irohaプロジェクトのルートディレクトリにいることを確認する。（例では`/iroha`）
 	次のコマンドを打つ。
 	```terminal
 	docker-compose up --build
