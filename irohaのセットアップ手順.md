@@ -74,7 +74,7 @@ last updated: 2020.09.24
 					environment:
 					    - MYSQL_DATABASE=irohaboard
 					    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-					    - MYSQL_ROOT_PASSWORD=root #これ！！
+					    - MYSQL_ROOT_PASSWORD=root #パスワードの変更はここ
 					    - TZ=Asia/Tokyo
 					volumes:
 					    - ./apache/sql:/var/lib/mysql:rw
@@ -89,7 +89,18 @@ last updated: 2020.09.24
 					```terminal
 					vi ./apache/html/app/Config/database.php
 					~~略~~
-					
+					class DATABASE_CONFIG {
+					        public $default = array(
+					                'datasource' => 'Database/Mysql',
+					                'persistent' => true,
+					                'host' => 'mysql',
+					                'login' => 'root',
+					                'password' => 'root', #パスワードの変更はここ
+					                'database' => 'irohaboard',
+					                'prefix' => 'ib_',
+					                'encoding' => 'utf8'
+					        );
+					}
 					~~略~~
 					```
 #### イメージのビルドと起動
