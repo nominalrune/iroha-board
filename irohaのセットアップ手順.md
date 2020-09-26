@@ -48,6 +48,7 @@ last updated: 2020.09.24
 	- iroha boardプロジェクト用のフォルダを作成する
 		- 例：
 		```terminal
+		mkdir /projects
 		mkdir /projects/iroha
 		```
 1. **iroha boardのダウンロード**
