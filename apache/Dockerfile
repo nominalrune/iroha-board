@@ -1,12 +1,11 @@
 FROM ubuntu
 LABEL version="0.1" name="iroha_board" author="nominalrune"
-RUN env TZ="Asia/Tokyo" \
-	&& apt-get update \
+RUN apt-get update \
 	&& apt-get install -y apt-utils \
-	&& echo Asia/Tokyo > /etc/timezone \
 	&& env DEBIAN_FRONTEND="noninteractive" apt-get install -y --no-install-recommends apache2 file \
 	mysql-common mysql-client-core-8.0 \
 	php7.4 php7.4-mbstring php7.4-pdo php7.4-mysqlnd \
+	&& echo Asia/Tokyo > /etc/timezone \
 	&& dpkg-reconfigure --frontend noninteractive tzdata \
 	&& apt-get remove -y --purge apt-utils \
 	&& apt-get -y autoremove \
