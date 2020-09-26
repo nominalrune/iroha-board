@@ -64,7 +64,7 @@ last updated: 2020.09.24
 			1. MySQL側の設定
 				1. `docker-compose.yml`内の環境変数`MYSQL_ROOT_PASSWORD`の値を変更
 				```terminal
-				vi docker-compose.yml
+				vi docker-compose.yml #編集コマンド
 				~~略~~
 				     mysql:
 					image: mysql:8.0.21
@@ -81,6 +81,7 @@ last updated: 2020.09.24
 					tty: true
 					stdin_open: true
 				~~略~~
+				:wq  #保存してquitコマンド
 				```
 			1. iroha board側の設定
 				1. ディレクトリ`iroha-board-Dockerized/apache/html/app/Config`内にある、`database.php`の`'password'`変数をMySQLでのパスワードに合わせる
