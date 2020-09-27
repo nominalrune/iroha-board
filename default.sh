@@ -5,4 +5,4 @@ cd /projects/iroha
 git checkout -b lbProjectTest
 docker-compose up --build
 # chown -R www-data /projects/iroha/apache
-docker-compose up
+
