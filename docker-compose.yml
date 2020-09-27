@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 
 services:
     php:
@@ -31,6 +31,8 @@ services:
             - ./apache/sql:/var/lib/mysql:rw
         tty: true
         stdin_open: true
+        security_opt:
+            - seccomp:unconfined
 networks: 
     iroha_net:
         driver: bridge
