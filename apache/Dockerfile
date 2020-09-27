@@ -16,7 +16,7 @@ ENV APACHE_DOCUMENT_ROOT=/var/www/html \
 COPY ./apache2.conf /etc/apache2/apache2.conf
 COPY ./envvars /etc/apache2/envvars
 COPY ./php.ini /etc/php/7.4/apache2/php.ini
-ENTRYPOINT exec . /etc/apache2/envvars \
+ENTRYPOINT exec sudo . /etc/apache2/envvars \
 	&& chown -R www-data /var/www/html \
 	&& service apache2 stop \
 	&& /usr/sbin/apache2ctl -D FOREGROUND
