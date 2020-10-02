@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>iroha&#x306E;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x624B;&#x9806;</title>
+      <title>[Win10] iroha&#x306E;&#x30BB;&#x30C3;&#x30C8;&#x30A2;&#x30C3;&#x30D7;&#x624B;&#x9806;</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -303,39 +303,32 @@ pre[data-line] .line-highlight[data-end]:after {
 <h4 class="mume-header" id="%E7%92%B0%E5%A2%83%E6%A7%8B%E7%AF%89">&#x74B0;&#x5883;&#x69CB;&#x7BC9;</h4>
 
 <ol>
-<li><strong>&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x4F5C;&#x6210;</strong>
+<li>
+<p><strong>&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x4F5C;&#x6210;</strong></p>
 <ul>
 <li>iroha board&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x7528;&#x306E;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x3092;&#x4F5C;&#x6210;&#x3059;&#x308B;
 <ul>
 <li>&#x4F8B;&#xFF1A;</li>
 </ul>
-<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>mkdir /projects
-mkdir /projects/iroha
-</code></pre></li>
+<pre data-role="codeBlock" data-info="powershell" class="language-powershell">mkdir <span class="token operator">/</span>projects
+mkdir <span class="token operator">/</span>projects<span class="token operator">/</span>iroha
+</pre></li>
 </ul>
 </li>
-<li><strong>iroha board&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;</strong>
+<li>
+<p><strong>iroha board&#x306E;&#x30C0;&#x30A6;&#x30F3;&#x30ED;&#x30FC;&#x30C9;</strong></p>
 <ul>
 <li>&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30D5;&#x30A9;&#x30EB;&#x30C0;&#x306B;&#x3001;&#x6A2A;&#x5C71;&#x306B;&#x3088;&#x308B;&#x30BD;&#x30FC;&#x30B9;&#x30BB;&#x30C3;&#x30C8;&#x3092;&#x4E38;&#x3054;&#x3068;&#x30B3;&#x30D4;&#x30FC;&#x3059;&#x308B;<br>
 <small>&#xFF08;2020.09.23 &#x73FE;&#x5728;&#x306F; <a href="https://github.com/nominalrune/iroha-board-Dockerized.git">https://github.com/nominalrune/iroha-board-Dockerized.git</a> &#x306B;&#x516C;&#x958B;&#x3057;&#x3066;&#x3044;&#x308B;&#x3002;&#x793E;&#x5185;&#x5411;&#x3051;&#x306B;&#x3001;&#x5B89;&#x5B9A;&#x7684;&#x306A;&#x5834;&#x6240;&#x306B;&#x79FB;&#x52D5;&#x4E88;&#x5B9A;&#xFF09;</small></li>
-<li>&#x4F8B;: GitHub&#x304B;&#x3089;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x3092;&#x30AF;&#x30ED;&#x30FC;&#x30F3;&#x3057;&#x3066;&#x3001;&#x30D6;&#x30E9;&#x30F3;&#x30C1;&#x3092;&#x4F5C;&#x6210;<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>git clone https://github.com/nominalrune/iroha-board-Dockerized.git /projects/iroha
-cd /projects/iroha
-git checkout -b lbProjectTest
-</code></pre></li>
+<li>&#x4F8B;: GitHub&#x304B;&#x3089;&#x30EA;&#x30DD;&#x30B8;&#x30C8;&#x30EA;&#x3092;&#x30AF;&#x30ED;&#x30FC;&#x30F3;&#x3057;&#x3066;&#x3001;&#x30D6;&#x30E9;&#x30F3;&#x30C1;&#x3092;&#x4F5C;&#x6210;<pre data-role="codeBlock" data-info="powershell" class="language-powershell">git clone https:<span class="token operator">/</span><span class="token operator">/</span>github<span class="token punctuation">.</span>com<span class="token operator">/</span>nominalrune<span class="token operator">/</span>iroha<span class="token operator">-</span>board<span class="token operator">-</span>Dockerized<span class="token punctuation">.</span>git <span class="token operator">/</span>projects<span class="token operator">/</span>iroha
+cd <span class="token operator">/</span>projects<span class="token operator">/</span>iroha
+git checkout <span class="token operator">-</span>b lbProjectTest
+</pre></li>
 </ul>
 </li>
-<li><strong>&#x8A2D;&#x5B9A;</strong>
+<li>
+<p><strong>&#x8A2D;&#x5B9A;</strong></p>
 <ol>
-<li>apache&#x3078;&#x306E;&#x6240;&#x6709;&#x6A29;&#x59D4;&#x8B72;
-<ul>
-<li>apache&#x304C;&#x5916;&#x90E8;&#x516C;&#x958B;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x3092;&#x64CD;&#x4F5C;&#x3067;&#x304D;&#x308B;&#x3088;&#x3046;&#x3001;&#x6240;&#x6709;&#x6A29;&#x3092;&#x308F;&#x305F;&#x3059;
-<ul>
-<li>&#x4F8B;:<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>	chown -R www-data /projects/iroha/apache
-</code></pre></li>
-</ul>
-</li>
-</ul>
-</li>
 <li>MySQL&#x306E;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x8A2D;&#x5B9A;</li>
 </ol>
 <ul>
@@ -345,25 +338,24 @@ git checkout -b lbProjectTest
 <ol>
 <li><code>docker-compose.yml</code>&#x5185;&#x306E;&#x74B0;&#x5883;&#x5909;&#x6570;<code>MYSQL_ROOT_PASSWORD</code>&#x306E;&#x5024;&#x3092;&#x5909;&#x66F4;
 <ul>
-<li>&#x4F8B;:<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>vi docker-compose.yml # &#x7DE8;&#x96C6;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x6253;&#x3064;
-# ~~&#x4E2D;&#x7565;~~
-     mysql: #MySQL&#x306E;&#x9805;&#x76EE;&#x3092;&#x898B;&#x3064;&#x3051;&#x308B;
-	image: mysql:8.0.21
-	restart: unless-stopped
+<li>&#x4F8B;:<pre data-role="codeBlock" data-info="powershell" class="language-powershell">code docker<span class="token operator">-</span>compose<span class="token punctuation">.</span>yml
+<span class="token comment"># ~~&#x4E2D;&#x7565;~~</span>
+     mysql: <span class="token comment">#MySQL&#x306E;&#x9805;&#x76EE;&#x3092;&#x898B;&#x3064;&#x3051;&#x308B;</span>
+	image: mysql:8<span class="token punctuation">.</span>0<span class="token punctuation">.</span>21
+	restart: unless<span class="token operator">-</span>stopped
 	networks:
-	    - iroha_net
+	    <span class="token operator">-</span> iroha_net
 	environment:
-	    - MYSQL_DATABASE=irohaboard
-	    - MYSQL_ALLOW_EMPTY_PASSWORD=yes
-	    - MYSQL_ROOT_PASSWORD=root # &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306E;&#x5909;&#x66F4;&#x306F;&#x3053;&#x3053;
-	    - TZ=Asia/Tokyo
+	    <span class="token operator">-</span> MYSQL_DATABASE=irohaboard
+	    <span class="token operator">-</span> MYSQL_ALLOW_EMPTY_PASSWORD=yes
+	    <span class="token operator">-</span> MYSQL_ROOT_PASSWORD=root <span class="token comment"># &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306E;&#x5909;&#x66F4;&#x306F;&#x3053;&#x3053;</span>
+	    <span class="token operator">-</span> TZ=Asia<span class="token operator">/</span>Tokyo
 	volumes:
-	    - ./apache/sql:/var/lib/mysql:rw
+	    <span class="token operator">-</span> <span class="token punctuation">.</span><span class="token operator">/</span>apache<span class="token operator">/</span>sql:<span class="token operator">/</span><span class="token keyword">var</span><span class="token operator">/</span>lib<span class="token operator">/</span>mysql:rw
 	tty: true
 	stdin_open: true
-# ~~&#x4E2D;&#x7565;~~
-:wq  #&#x4FDD;&#x5B58;&#x3057;&#x3066;quit&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3067;&#x5B8C;&#x4E86;
-</code></pre></li>
+<span class="token comment"># ~~&#x4E2D;&#x7565;~~</span>
+</pre></li>
 </ul>
 </li>
 </ol>
@@ -372,23 +364,22 @@ git checkout -b lbProjectTest
 <ol>
 <li>&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x4EE5;&#x4E0B;<code>./apache/html/app/Config</code>&#x5185;&#x306B;&#x3042;&#x308B;&#x3001;<code>database.php</code>&#x306E;<code>&apos;password&apos;</code>&#x5909;&#x6570;&#x3092;MySQL&#x3067;&#x306E;&#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306B;&#x5408;&#x308F;&#x305B;&#x308B;
 <ul>
-<li>&#x4F8B;:<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>vi ./apache/html/app/Config/database.php
-# ~~&#x4E2D;&#x7565;~~
-class DATABASE_CONFIG {
-        public $default = array(
-                &apos;datasource&apos; =&gt; &apos;Database/Mysql&apos;,
-                &apos;persistent&apos; =&gt; true,
-                &apos;host&apos; =&gt; &apos;mysql&apos;,
-                &apos;login&apos; =&gt; &apos;root&apos;,
-                &apos;password&apos; =&gt; &apos;root&apos;, # &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306E;&#x5909;&#x66F4;&#x306F;&#x3053;&#x3053;
-                &apos;database&apos; =&gt; &apos;irohaboard&apos;,
-                &apos;prefix&apos; =&gt; &apos;ib_&apos;,
-                &apos;encoding&apos; =&gt; &apos;utf8&apos;
-        );
-}
-# ~~&#x4E2D;&#x7565;~~
-:wq
-</code></pre></li>
+<li>&#x4F8B;:<pre data-role="codeBlock" data-info="powershell" class="language-powershell">code <span class="token punctuation">.</span><span class="token operator">/</span>apache<span class="token operator">/</span>html<span class="token operator">/</span>app<span class="token operator">/</span>Config<span class="token operator">/</span>database<span class="token punctuation">.</span>php
+<span class="token comment"># ~~&#x4E2D;&#x7565;~~</span>
+<span class="token keyword">class</span> DATABASE_CONFIG <span class="token punctuation">{</span>
+        public <span class="token variable">$default</span> = array<span class="token punctuation">(</span>
+                <span class="token string">&apos;datasource&apos;</span> =&gt; <span class="token string">&apos;Database/Mysql&apos;</span><span class="token punctuation">,</span>
+                <span class="token string">&apos;persistent&apos;</span> =&gt; true<span class="token punctuation">,</span>
+                <span class="token string">&apos;host&apos;</span> =&gt; <span class="token string">&apos;mysql&apos;</span><span class="token punctuation">,</span>
+                <span class="token string">&apos;login&apos;</span> =&gt; <span class="token string">&apos;root&apos;</span><span class="token punctuation">,</span>
+                <span class="token string">&apos;password&apos;</span> =&gt; <span class="token string">&apos;root&apos;</span><span class="token punctuation">,</span> <span class="token comment"># &#x30D1;&#x30B9;&#x30EF;&#x30FC;&#x30C9;&#x306E;&#x5909;&#x66F4;&#x306F;&#x3053;&#x3053;</span>
+                <span class="token string">&apos;database&apos;</span> =&gt; <span class="token string">&apos;irohaboard&apos;</span><span class="token punctuation">,</span>
+                <span class="token string">&apos;prefix&apos;</span> =&gt; <span class="token string">&apos;ib_&apos;</span><span class="token punctuation">,</span>
+                <span class="token string">&apos;encoding&apos;</span> =&gt; <span class="token string">&apos;utf8&apos;</span>
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment"># ~~&#x4E2D;&#x7565;~~</span>
+</pre></li>
 </ul>
 </li>
 </ol>
@@ -404,14 +395,14 @@ class DATABASE_CONFIG {
 <li>&#x30B3;&#x30F3;&#x30C6;&#x30CA;&#x304B;&#x3089;&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x3092;&#x4F5C;&#x6210;
 <ul>
 <li>iroha&#x30D7;&#x30ED;&#x30B8;&#x30A7;&#x30AF;&#x30C8;&#x306E;&#x30EB;&#x30FC;&#x30C8;&#x30C7;&#x30A3;&#x30EC;&#x30AF;&#x30C8;&#x30EA;&#x306B;&#x3044;&#x308B;&#x3053;&#x3068;&#x3092;&#x78BA;&#x8A8D;&#x3059;&#x308B;&#x3002;&#xFF08;&#x4F8B;&#x3067;&#x306F;<code>/iroha</code>&#xFF09;</li>
-<li>&#x6B21;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x6253;&#x3064;&#x3002;<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>docker-compose up --build
-</code></pre></li>
+<li>&#x6B21;&#x306E;&#x30B3;&#x30DE;&#x30F3;&#x30C9;&#x3092;&#x6253;&#x3064;&#x3002;<pre data-role="codeBlock" data-info="powershell" class="language-powershell">docker<span class="token operator">-</span>compose up <span class="token operator">--</span>build
+</pre></li>
 </ul>
 </li>
 <li>&#x30B5;&#x30FC;&#x30D3;&#x30B9;&#x304C;&#x8D77;&#x52D5;&#x3059;&#x308B;&#x307E;&#x3067;&#x5F85;&#x3064;
 <ul>
-<li>mysql&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x304C;<pre data-role="codeBlock" data-info="terminal" class="language-terminal"><code>[System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: &apos;8.0.21&apos;  socket: &apos;/var/run/mysqld/mysqld.sock&apos;  port: 3306  MySQL Community Server - GPL.
-</code></pre>&#x3068;&#x3044;&#x3046;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x51FA;&#x3057;&#x3066;&#x5F85;&#x6A5F;&#x72B6;&#x614B;&#x306B;&#x306A;&#x308C;&#x3070;&#x5B8C;&#x4E86;</li>
+<li>mysql&#x30A4;&#x30E1;&#x30FC;&#x30B8;&#x304C;<pre data-role="codeBlock" data-info="powershell" class="language-powershell"><span class="token namespace">[System]</span> <span class="token namespace">[MY-010931]</span> <span class="token namespace">[Server]</span> <span class="token operator">/</span>usr<span class="token operator">/</span>sbin<span class="token operator">/</span>mysqld: ready <span class="token keyword">for</span> connections<span class="token punctuation">.</span> Version: <span class="token string">&apos;8.0.21&apos;</span>  socket: <span class="token string">&apos;/var/run/mysqld/mysqld.sock&apos;</span>  port: 3306  MySQL Community Server <span class="token operator">-</span> GPL<span class="token punctuation">.</span>
+</pre>&#x3068;&#x3044;&#x3046;&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x51FA;&#x3057;&#x3066;&#x5F85;&#x6A5F;&#x72B6;&#x614B;&#x306B;&#x306A;&#x308C;&#x3070;&#x5B8C;&#x4E86;</li>
 </ul>
 </li>
 </ol>
